@@ -2,7 +2,7 @@ function __fzf_opinionated_history
     # history merge incorporates history changes from other fish sessions
     history merge
     set --local command (
-        history --null |
+        history --null | tr '\n' ' ' |
         fzf --prompt=❯❯❯ --read0 --tiebreak=index --query=(commandline)
     )
 
